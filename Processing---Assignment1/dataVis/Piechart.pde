@@ -1,9 +1,11 @@
 class Piechart
 {
+  //This arraylist stores arraylists which have the fields from the dataset
   ArrayList<ArrayList<Float>> cameras = new ArrayList<ArrayList<Float>>();
+  //This arraylist stores the models of the cameras (the first field on each line of the file)
   ArrayList<String> model = new ArrayList<String>();
   
-  
+  //Same variables used in Scatter.
   float gWidth;
   float gHeight;
   float border;
@@ -12,8 +14,11 @@ class Piechart
   color c;
   color b;
   
+  //The array which stores the count for each model. Initialised to 0.
   int[] modelCount = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+  //Array of basic model names. This is used to check if the longer model name and description contains the brand as a substring.
   String[] models = {"Agfa", "Canon", "Casio", "Contax", "Epson", "Fujifilm", "HP Photosmart", "JVC", "Kodak", "Kyocera", "Leica", "Nikon", "Olympus", "Panasonic", "Pentax", "Ricoh", "Samsung", "Sanyo", "Sigma", "Sony", "Toshiba"};
+  //Array of random colors. Declared but not initialised (There are 21 brands)
   color[] r = new color[21];
   
   Piechart()
@@ -28,6 +33,7 @@ class Piechart
   }
   
   //-----------------------------------------------------------------------------------------
+  //The same as the Scatter class, more or less
   void loadData()
   {
     String[] strings = loadStrings("Camera.csv");  
